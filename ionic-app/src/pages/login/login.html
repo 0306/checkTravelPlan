@@ -1,0 +1,39 @@
+<ion-content class="loginBackground" no-bounce>
+  <ion-card>
+    <ion-card-header>
+  <ion-segment [(ngModel)]="choose" color="light">
+    <ion-segment-button clear value="login" >
+      Login
+    </ion-segment-button>
+    <ion-segment-button clear value="register" >
+      Sign up
+    </ion-segment-button>
+  </ion-segment>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list no-line *ngIf="choose === 'login'">
+        <ion-item>
+          <ion-input input="text" placeholder="Username"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input input="password" placeholder="Password"></ion-input>
+        </ion-item>
+        <button ion-button block outline color="light">Log in</button>
+        <p>OR</p>
+        <button class= "facebook-button" ion-button block color="facebook">
+          <ion-icon name="logo-facebook"> </ion-icon> &nbsp; Login with facebook
+        </button>
+        <button class="bottom" ion-button clear full color="light">Forgot password</button>
+      </ion-list>
+      <ion-list no-line *ngIf="choose === 'register'">
+        <ion-item>
+          <ion-input input="text" placeholder="Username"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input input="password" placeholder="Password"></ion-input>
+        </ion-item>
+        <button ion-button block outline color="light">Sign up</button>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>  
+</ion-content>
